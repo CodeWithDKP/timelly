@@ -1,0 +1,233 @@
+.feature-grid-section {
+    background-color: rgba(20, 29, 48, 1);
+    background-image: radial-gradient(circle at 10% 20%, rgba(30, 2, 49, 0.4) 0%, rgba(20, 29, 48, 1) 100%);
+
+    padding: 80px 0;
+}
+
+/* Hidden before animation */
+.feature-row {
+    opacity: 0;
+    transform: translateY(0px);
+    transition: opacity 1s ease, transform 0.6s ease;
+}
+
+/* When visible */
+.feature-row.show {
+    opacity: 1;
+    transform: translateY(50px);
+}
+
+/* When hiding on scroll up */
+.feature-row.hide {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+
+
+/* HEADER */
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.subtitle {
+    color: #b0b0b0;
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+.header-gradient-text {
+    background: linear-gradient(to right, #4ade80, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* CARD */
+.feature-card {
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.03);
+    transition: 0.3s;
+    cursor: pointer;
+    color: white;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: scale(1.03);
+    border-color: transparent;
+}
+
+/* ICON */
+.icon-container {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.icon-svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+
+/* GRADIENTS */
+.gradient-blue {
+    background: linear-gradient(135deg, #3b82f6, #38bdf8);
+}
+
+.gradient-purple {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+.gradient-green {
+    background: linear-gradient(135deg, #22c55e, #34d399);
+}
+
+.gradient-orange {
+    background: linear-gradient(135deg, #f97316, #facc15);
+}
+
+.gradient-cyan {
+    background: linear-gradient(135deg, #06b6d4, #14b8a6);
+}
+
+.gradient-indigo {
+    background: linear-gradient(135deg, #6366f1, #a78bfa);
+}
+
+.gradient-pink {
+    background: linear-gradient(135deg, #ec4899, #fb7185);
+}
+
+.gradient-teal {
+    background: linear-gradient(135deg, #14b8a6, #06b6d4);
+}
+
+.gradient-violet {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+}
+
+.gradient-amber {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.gradient-rose {
+    background: linear-gradient(135deg, #f43f5e, #fb7185);
+}
+
+.gradient-emerald {
+    background: linear-gradient(135deg, #10b981, #a3e635);
+}
+
+/* LIGHT BG (matching tailwind /10 opacity) */
+.bg-blue {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.bg-purple {
+    background: rgba(147, 51, 234, 0.1);
+}
+
+.bg-green {
+    background: rgba(22, 163, 74, 0.1);
+}
+
+.bg-orange {
+    background: rgba(234, 88, 12, 0.1);
+}
+
+.bg-cyan {
+    background: rgba(6, 182, 212, 0.1);
+}
+
+.bg-indigo {
+    background: rgba(79, 70, 229, 0.1);
+}
+
+.bg-pink {
+    background: rgba(219, 39, 119, 0.1);
+}
+
+.bg-teal {
+    background: rgba(20, 184, 166, 0.1);
+}
+
+.bg-violet {
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.bg-amber {
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.bg-rose {
+    background: rgba(225, 29, 72, 0.1);
+}
+
+.bg-emerald {
+    background: rgba(16, 185, 129, 0.1);
+}
+
+
+/* BOTTOM SIDE GLOW ONLY */
+.glow-blue:hover {
+    box-shadow: 0 10px 10px -5px rgba(59, 130, 246, 0.7);
+}
+
+.glow-purple:hover {
+    box-shadow: 0 10px 10px -5px rgba(168, 85, 247, 0.7);
+}
+
+.glow-green:hover {
+    box-shadow: 0 10px 10px -5px rgba(34, 197, 94, 0.7);
+}
+
+.glow-orange:hover {
+    box-shadow: 0 10px 10px -5px rgba(249, 115, 22, 0.7);
+}
+
+.glow-cyan:hover {
+    box-shadow: 0 10px 10px -5px rgba(45, 212, 191, 0.7);
+}
+
+.glow-indigo:hover {
+    box-shadow: 0 10px 10px -5px rgba(99, 102, 241, 0.7);
+}
+
+.glow-pink:hover {
+    box-shadow: 0 10px 10px -5px rgba(236, 72, 153, 0.7);
+}
+
+.glow-teal:hover {
+    box-shadow: 0 10px 10px -5px rgba(20, 184, 166, 0.7);
+}
+
+.glow-violet:hover {
+    box-shadow: 0 10px 10px -5px rgba(167, 139, 250, 0.7);
+}
+
+.glow-amber:hover {
+    box-shadow: 0 10px 10px -5px rgba(251, 191, 36, 0.7);
+}
+
+.glow-rose:hover {
+    box-shadow: 0 10px 10px -5px rgba(244, 63, 94, 0.7);
+}
+
+.glow-emerald:hover {
+    box-shadow: 0 10px 10px -5px rgba(52, 211, 163, 0.7);
+}

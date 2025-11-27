@@ -1,0 +1,327 @@
+/* --- 1. Global Setup & Dark Theme --- */
+.hero-container {
+    /* Dark background with a subtle gradient/color */
+    background-color: rgba(20, 29, 48, 1);
+    background-image: radial-gradient(circle at 10% 20%, rgba(30, 2, 49, 0.4) 0%, rgba(20, 29, 48, 1) 100%);
+    color: white;
+    padding: 100px 5% 100px;
+    /* Vertical padding and horizontal margin */
+    position: relative;
+    overflow: hidden;
+    /* To keep dot animations inside */
+    min-height: auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+/* --- 2. Layout (Grid/Flex) --- */
+
+.hero-content-left {
+    flex: 1;
+    /* Takes up available space */
+    max-width: 500px;
+    /* Cap the width of the text block */
+    z-index: 2;
+    /* Ensure content is above the dots */
+}
+
+.hero-content-right {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    z-index: 2;
+}
+
+/* --- 3. Typography & Styling --- */
+
+.herosubtitle {
+    color: #a060ff;
+    /* Bright purple/blue color */
+    font-size: 1em;
+    margin-bottom: 10px;
+    border: #bbb solid 0.1px;
+    border-radius: 10px;
+    margin-right: 250px;
+}
+
+.titlehero {
+    font-size: 3em;
+    /* Large, bold font */
+    font-weight: 800;
+   
+    margin: 0 0 20px 0;
+    /* Applying a gradient to the title like in the image */
+    background: linear-gradient(90deg, #ffffff 50%, #a060ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+}
+
+.description {
+    font-size: 1.1em;
+    color: #bbb;
+    margin-bottom: 30px;
+
+}
+
+/* CTA Buttons */
+.cta-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.cta-button.primary {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.cta-button.primary:hover {
+    opacity: 0.9;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border: 1px solid #6a11cb;
+    color: white;
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(106, 17, 203, 0.1);
+}
+
+.arrow {
+    margin-left: 8px;
+    font-size: 1.2em;
+}
+
+/* Stats */
+.stats-group {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    color: #bbb;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: white;
+}
+
+.stat-label {
+    font-size: 0.9em;
+}
+
+
+/* --- 4. Mockup Image & Floating Panels --- */
+
+.floating-image-wrapper {
+    /* Placeholder for the image/mockup frame */
+    width: 100%;
+    max-width: 550px;
+    aspect-ratio: 16/10;
+    /* Animation: Smooth up and down */
+    animation: floatUpAndDown 4s ease-in-out infinite;
+
+}
+
+.main-mockup-image {
+    /* Apply your background image here */
+    background-image: url('../assets/hero3.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    border: #ffffff 1px solid;
+    border-radius: 15px;
+    /* Subtle rounding */
+    box-shadow: 0 0 60px 0 rgb(149, 142, 169);
+    /* Shadow for depth */
+}
+
+/* Floating Panels */
+.floating-panel {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+    /* Glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s;
+    /* Animation for moving panels */
+    animation: panelMovement 6s ease-in-out infinite alternate;
+}
+
+.top-right {
+    top: 0%;
+    right: 5%;
+}
+
+.bottom-left {
+    bottom: 5%;
+    left: 5%;
+    animation-delay: 1s;
+    /* Offset movement */
+}
+
+/* --- 5. Background Dots Animation --- */
+
+.dot-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Below the main content */
+    pointer-events: none;
+}
+
+.dot {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: rgb(255, 255, 255);
+    /* White/light gray color */
+    border-radius: 50%;
+    opacity: 0;
+    /* Starts hidden */
+    animation: flowRandom 15s linear infinite;
+    /* Long animation duration for slow movement */
+}
+
+/* --- 6. Keyframes for Animations --- */
+
+/* Animation for the dots */
+@keyframes flowRandom {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.8;
+    }
+
+    100% {
+        /* Random large movement */
+        transform: translate(calc(var(--rand-x) * 100px), calc(var(--rand-y) * 100px));
+        opacity: 0;
+    }
+}
+
+/* Fix for random flow (requires manual calculation in a real setup or a preprocessor): 
+   Since pure CSS can't randomize per dot, this keyframe provides a standard flow. 
+   We rely on the random positioning and delay set in the JSX for the "random" look.
+*/
+@keyframes flowRandom {
+    0% {
+        transform: translate(0, 0) scale(0.8);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0.5;
+    }
+
+    95% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(300px, -200px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+
+/* Animation for the main image (smooth up and down) */
+@keyframes floatUpAndDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animation for the moving panels */
+@keyframes panelMovement {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-5px, 5px);
+    }
+
+    /* Slight diagonal shift */
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* --- 7. Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        /* Stack columns vertically */
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .hero-content-left {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .title {
+        font-size: 2.5em;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+
+    .stats-group {
+        justify-content: center;
+    }
+
+    .hero-content-right {
+        min-height: 300px;
+        order: -1;
+        /* Move image above content on mobile */
+    }
+}
+
+
+
+

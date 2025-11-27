@@ -1,0 +1,143 @@
+/* --- Base Section Styling --- */
+
+.dashboard-section {
+    background-color: rgb(22,36,57);
+    color: white;
+    padding: 5rem 0; /* Bootstrap py-5 equivalent */
+}
+.dashboard{
+    font-weight: 600 !important;
+}
+/* Gradient Header Text (Three Powerful) */
+.gradient-header-text {
+    background: linear-gradient(to right, #60a5fa, #c084fc); /* Blue-Purple Gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    display: inline-block;
+}
+
+/* --- Card Base Styles --- */
+
+.dashboard-card {
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 1.5rem; /* rounded-3xl */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* border-white/10 */
+    overflow: hidden;
+    backdrop-filter: blur(12px); /* backdrop-blur-md */
+    transition: all 0.5s ease-out;
+    height: 100%; /* Important for equal height in a grid */
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+/* Hover Effect (Card moves up) */
+.dashboard-card:hover {
+    transform: translateY(-1rem); /* -translate-y-4 */
+    /* Add a subtle shadow on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Card Specific Coloring & Hover Effects --- */
+
+/* BLUE CARD (Admin) */
+.card-blue {
+    /* Base background */
+    background: linear-gradient(to bottom right, rgba(30, 58, 138, 0.1), rgba(59, 130, 246, 0.1));
+}
+
+.card-blue:hover {
+    /* Stronger gradient on hover (Opacity 30%) */
+    background: linear-gradient(to bottom right, rgba(30, 64, 175, 0.3), rgba(96, 165, 250, 0.3));
+}
+
+/* PURPLE CARD (Parent) */
+.card-purple {
+    /* Base background */
+    background: linear-gradient(to bottom right, rgba(78, 26, 114, 0.1), rgba(168, 85, 247, 0.1));
+}
+
+.card-purple:hover {
+    /* Stronger gradient on hover (Opacity 30%) */
+    background: linear-gradient(to bottom right, rgba(109, 40, 217, 0.3), rgba(192, 132, 252, 0.3));
+}
+
+/* EMERALD CARD (Teacher) */
+.card-emerald {
+    /* Base background */
+    background: linear-gradient(to bottom right, rgba(4, 75, 57, 0.1), rgba(16, 185, 129, 0.1));
+}
+
+.card-emerald:hover {
+    /* Stronger gradient on hover (Opacity 30%) */
+    background: linear-gradient(to bottom right, rgba(6, 95, 70, 0.3), rgba(52, 211, 163, 0.3));
+}
+
+/* --- Icons --- */
+.icon-container {
+    width: 3.5rem; /* w-14 */
+    height: 3.5rem; /* h-14 */
+    padding: 0.75rem; /* p-3 */
+    border-radius: 0.75rem; /* rounded-xl */
+    margin-bottom: 1rem; /* mb-4 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+/* Icon Gradients */
+.icon-blue { background: linear-gradient(to bottom right, #3b82f6, #06b6d4); }
+.icon-purple { background: linear-gradient(to bottom right, #a855f7, #ec4899); }
+.icon-emerald { background: linear-gradient(to bottom right, #10b981, #bef264); }
+
+
+/* --- Top-Right Circle Decoration --- */
+.card-circle {
+    position: absolute;
+    top: -2.5rem; /* -top-10 */
+    right: -2.5rem; /* -right-10 */
+    width: 8rem; /* w-32 */
+    height: 8rem; /* h-32 */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Circle Colors (Opacity 20%) */
+.circle-blue { background-color: rgba(37, 99, 235, 0.2); }
+.circle-purple { background-color: rgba(147, 51, 234, 0.2); }
+.circle-emerald { background-color: rgba(16, 185, 129, 0.2); }
+
+/* --- Feature List Styling --- */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+    color: #ccc; /* gray-300 */
+    font-size: 0.9rem; /* text-sm */
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+/* Checkmark icon styles */
+.feature-list svg {
+    width: 0.75rem; /* w-3 */
+    height: 0.75rem; /* h-3 */
+    margin-top: 0.2rem;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+    color: #9ca3af; /* gray-400 */
+}
