@@ -1,5 +1,5 @@
 
- import '../components/ThreeDashboards.css';
+import '../components/ThreeDashboards.css';
 
 const dashboards = [
   {
@@ -36,7 +36,7 @@ const DashboardCard = ({ dashboard }) => {
     <div className={`dashboard-card ${dashboard.cardClass} mb-4`}>
       {/* Large Circle in Top Right */}
       <div className={`card-circle ${dashboard.circleClass}`}></div>
-      
+
       {/* Icon Area */}
       <div className={`icon-container ${dashboard.iconClass}`}>
         <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" style={{ width: '1.5rem', height: '1.5rem' }}>
@@ -47,7 +47,7 @@ const DashboardCard = ({ dashboard }) => {
       {/* Content */}
       <h3 className="h4 font-weight-bold text-white mt-1 mb-1">{dashboard.title}</h3>
       <p className="text-white small mb-4">{dashboard.description}</p>
-      
+
       {/* Feature List */}
       <ul className="feature-list">
         {dashboard.features.map((feature, index) => (
@@ -69,7 +69,7 @@ const ThreeDashboards = () => {
   return (
     <div className="dashboard-section">
       <div className="container">
-        
+
         {/* Header Section */}
         <header className="text-center mb-5">
           <h2 className="display-4 font-weight-bolder mb-3 text-white">
@@ -81,14 +81,16 @@ const ThreeDashboards = () => {
           </p>
         </header>
 
-        {/* Cards Grid using Bootstrap Row and Col */}
-        <div className="row justify-content-center">
-          {dashboards.map((dashboard, index) => (
-            <div className="col-12 col-md-4 mb-4" key={index}>
-              <DashboardCard dashboard={dashboard} />
-            </div>
-          ))}
+        <div className="dashboard-connection-wrapper">
+          <div className="row justify-content-center">
+            {dashboards.map((dashboard, index) => (
+              <div className="col-12 col-md-4 mb-4" key={index}>
+                <DashboardCard dashboard={dashboard} />
+              </div>
+            ))}
+          </div>
         </div>
+
       </div>
     </div>
   );

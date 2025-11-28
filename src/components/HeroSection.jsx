@@ -1,8 +1,36 @@
 import React from 'react';
 import DotBackground from './DotBackground';
+import { useEffect } from 'react';
 import '../components/HeroSection.css';
 
 const HeroSection = () => {
+
+  useEffect(() => {
+    const counters = document.querySelectorAll(".stat-value");
+
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-target");
+      let count = 0;
+
+      const updateCounter = () => {
+        const speed = target / 120;
+
+        if (count < target) {
+          count += speed;
+          counter.innerText = Math.floor(count);
+          requestAnimationFrame(updateCounter);
+        } else {
+          // Format final numbers
+          counter.innerText =
+            target >= 1000 ? (target >= 100000 ? "500K+" : "10K") : target + "%";
+        }
+      };
+
+      updateCounter();
+    });
+  }, []);
+
+
   return (
     <section className="hero-container">
       {/* 1. Animated Dot Background */}
@@ -30,18 +58,19 @@ const HeroSection = () => {
         {/* Stats */}
         <div className="stats-group">
           <div className="stat-item">
-            <span className="stat-value">10K</span>
+            <span className="stat-value" data-target="10000">0</span>
             <span className="stat-label">Schools</span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">500K+</span>
+            <span className="stat-value" data-target="500000">0</span>
             <span className="stat-label">Students</span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">99.9%</span>
+            <span className="stat-value" data-target="99.9">0</span>
             <span className="stat-label">Uptime</span>
           </div>
         </div>
+
       </div>
 
       {/* 3. Image Right Side */}

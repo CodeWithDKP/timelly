@@ -180,7 +180,7 @@ const FeatureGrid = () => {
         </p>
       </div>
 
-      <div className="container">
+      <div className="container feature-container">
         {rows.map((row, idx) => (
           <div
             key={idx}

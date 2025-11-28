@@ -4,7 +4,9 @@
 
     padding: 80px 0;
 }
-
+.feature-container{
+margin-top: -65px;
+}
 /* Hidden before animation */
 .feature-row {
     opacity: 0;

@@ -30,8 +30,8 @@ const StatsSection = () => {
         </div>
       </div>
     </section>
-     <section className="timelly-end-section mt-0" data-aos="fade-up">
-      <div className="container text-center">
+     <section className="timelly-end-section" data-aos="fade-up">
+      <div className="timelly-container text-center">
         <h1 className="timelly-title">Timelly</h1>
         <p className="timelly-tagline">
           The Smart Way to Manage Your School — Faster, Simpler, Better.
